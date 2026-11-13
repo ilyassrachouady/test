@@ -1,57 +1,118 @@
-/**
- * Editable site copy + sample content. Replace contact info, ratings, company claims,
- * reviews, and supplied reference photography with material you can publish commercially.
- */
+// Verified details from hybpreventionconseil.ca. Original cleaning photography is illustrative and must be replaced with approved HYB visuals before launch.
 export const site = {
-  name: "KlinUp",
-  city: "Manhattan",
-  phone: "+1 (555) 123-4567",
-  email: "hello@klinup.com",
-  tagline: "Cleaning for busy people in Manhattan.",
-  description:
-    "Move-outs, renovations, or total transformations — we handle the toughest cleaning jobs so you don’t have to.",
+  "name": "HYB Prévention Conseil",
+  "shortName": "HYB Prévention",
+  "founder": "Hygo Bisimwa",
+  "location": "Québec",
+  "phone": "(514) 206-7171",
+  "email": "info@hybpreventionconseil.ca",
+  "slogan": "Restez bien conseillé!",
+  "tagline": "La prévention au cœur de votre entreprise.",
+  "description": "SST, ressources humaines et formations sur mesure : des conseils concrets pour protéger vos équipes et faire progresser votre entreprise au Québec."
 };
 
 export const services = [
   {
-    number: "01",
-    name: "Deep Cleaning",
-    short: "A complete top-to-bottom transformation for every corner.",
-    image: "/images/deep-clean.webp",
-    list: ["Baseboards & crown molding", "Inside cabinets & drawers", "Appliance deep clean", "Light fixtures & ceiling fans", "Window sills & tracks"],
+    "number": "01",
+    "name": "Prévention & SST",
+    "short": "Des milieux de travail plus sûrs grâce à une prévention adaptée à vos réalités.",
+    "image": "/images/deep-clean.webp",
+    "list": [
+      "Programmes de prévention",
+      "Inspection des lieux de travail",
+      "Analyse sécuritaire des tâches",
+      "Cadenassage et sécurité des machines",
+      "Audits et conformité SST"
+    ]
   },
   {
-    number: "02",
-    name: "Move-Out Cleaning",
-    short: "Leave your space looking its best for the next chapter.",
-    image: "/images/move-out.webp",
-    list: ["Full property sanitization", "Kitchen deep scrub", "Bathroom restoration", "Closet & cabinet interiors", "Floor cleaning & polish"],
+    "number": "02",
+    "name": "Formations sur mesure",
+    "short": "Des formations pratiques pour outiller vos travailleurs et gestionnaires.",
+    "image": "/images/move-out.webp",
+    "list": [
+      "Chariots élévateurs et transpalettes",
+      "Nacelles et plateformes élévatrices",
+      "Premiers soins et RCR",
+      "Extincteurs et sécurité incendie",
+      "SIMDUT, législation et prévention"
+    ]
   },
   {
-    number: "03",
-    name: "Airbnb Turnover",
-    short: "Fast, detail-focused cleaning between every guest stay.",
-    image: "/images/airbnb.webp",
-    list: ["Quick turnaround service", "Linen change & laundry", "Kitchen & bath sanitization", "Restocking essentials", "Trash & recycling removal"],
-  },
+    "number": "03",
+    "name": "Conseils en RH",
+    "short": "Un accompagnement humain pour la gestion et le développement de vos équipes.",
+    "image": "/images/airbnb.webp",
+    "list": [
+      "Gestion des conflits professionnels",
+      "Accueil et intégration",
+      "Gestion des absences et des lésions",
+      "Développement des compétences",
+      "Accompagnement des gestionnaires"
+    ]
+  }
 ];
 
 export const faqs = [
-  { q: "How much does a cleaning cost?", a: "Every space and service is a little different. Send us the size of your home and the type of clean you need, and we'll prepare a clear quote before any work begins." },
-  { q: "Do you use eco-friendly products?", a: "We can use eco-conscious cleaning products where appropriate. Let us know if you have surface sensitivities, allergies, or special product preferences when booking." },
-  { q: "Do I need to provide any supplies?", a: "Our standard service comes with basic equipment and products. If your space needs specialty materials, we'll discuss those with you ahead of time." },
-  { q: "How long does a cleaning take?", a: "The timing depends on square footage, condition, and the service selected. We estimate the time when confirming your booking and communicate any changes." },
-  { q: "Do you wash dishes or handle laundry?", a: "Laundry and dishes can be arranged for selected services. Include your request in the message field so we can confirm what's included." },
-  { q: "What if I need to cancel or reschedule?", a: "Contact us as early as possible and we'll help find another available appointment. Your booking confirmation will include the applicable cancellation policy." },
-  { q: "What if I’m not satisfied with the cleaning?", a: "Tell us what wasn't right as soon as you can. We'll review the concern and discuss an appropriate resolution with you." },
+  {
+    "q": "Quels services offre HYB Prévention Conseil?",
+    "a": "Nous accompagnons les organisations en santé et sécurité du travail (SST), gestion des ressources humaines et formation de travailleurs, notamment avec des programmes de prévention et des formations sur mesure."
+  },
+  {
+    "q": "À qui s'adressent vos services?",
+    "a": "Nous intervenons auprès des petites et moyennes entreprises du Québec, notamment dans les secteurs agroalimentaire, de la construction, du transport, de la restauration et de l'hôtellerie."
+  },
+  {
+    "q": "Proposez-vous des formations en entreprise?",
+    "a": "Oui. Nos services comprennent des formations sur mesure pour les travailleurs, les gestionnaires, les superviseurs et les chefs d'équipe. Contactez-nous pour discuter du format et des besoins de votre organisation."
+  },
+  {
+    "q": "Offrez-vous des formations pour les chariots élévateurs?",
+    "a": "Oui. HYB Prévention Conseil propose notamment des formations pour les chariots élévateurs, les transpalettes électriques, les nacelles et les plateformes élévatrices."
+  },
+  {
+    "q": "Pouvez-vous aider à établir un programme de prévention SST?",
+    "a": "Oui. Nos services abordent la planification de programmes de prévention, l'inspection des milieux de travail, l'analyse sécuritaire des tâches et le cadenassage des machines."
+  },
+  {
+    "q": "Offrez-vous aussi des conseils en ressources humaines?",
+    "a": "Oui. Nous accompagnons les employeurs et gestionnaires sur des enjeux comme l'intégration du personnel, la prévention du harcèlement, la gestion des conflits et le développement des compétences."
+  },
+  {
+    "q": "Comment obtenir une proposition ou connaître les tarifs?",
+    "a": "Décrivez-nous votre organisation et vos besoins à l'aide du formulaire ou contactez-nous au (514) 206-7171. Nous pourrons discuter des services et formations appropriés."
+  }
 ];
 
-// Demonstration testimonials only. Replace with verified, permissioned customer reviews before going live.
-export const testimonials = [
-  { quote: "The team was thoughtful, thorough, and so easy to work with. Coming home to a sparkling clean apartment was the best feeling.", name: "Robert M.", service: "Deep cleaning", image: "/images/person-1.webp" },
-  { quote: "Booking was simple, communication was clear, and the place looked wonderful after the move. I’d book again without hesitation.", name: "Jennifer K.", service: "Move-out cleaning", image: "/images/person-2.webp" },
-  { quote: "Everything felt fresh and ready for our family. They paid attention to the little details that make a big difference.", name: "Amanda L.", service: "Move-in cleaning", image: "/images/person-3.webp" },
-  { quote: "After our renovation there was dust everywhere. The difference after one visit was remarkable.", name: "Marcus R.", service: "Post-renovation", image: "/images/person-4.webp" },
-  { quote: "Friendly people and excellent results. It felt like our apartment had been given a complete reset.", name: "Priya S.", service: "Deep cleaning", image: "/images/person-5.webp" },
-  { quote: "Reliable turnaround and great care for our space. It made managing our guest stays much easier.", name: "David T.", service: "Airbnb turnover", image: "/images/person-6.webp" },
+export const expertiseCards = [
+  {
+    "name": "Prévention des risques",
+    "service": "Santé et sécurité du travail",
+    "quote": "Élaborer un programme de prévention adapté aux risques et aux activités de votre organisation."
+  },
+  {
+    "name": "Formations sur mesure",
+    "service": "Formation des travailleurs",
+    "quote": "Outiller les gestionnaires et les équipes avec des formations concrètes et adaptées au milieu."
+  },
+  {
+    "name": "Conseil RH",
+    "service": "Accompagnement des PME",
+    "quote": "Accompagner les employeurs dans la gestion des ressources humaines et des relations de travail."
+  },
+  {
+    "name": "Inspection et analyse",
+    "service": "Prévention au quotidien",
+    "quote": "Analyser les tâches, inspecter les lieux et identifier les pistes d'amélioration en SST."
+  },
+  {
+    "name": "Gestion des lésions",
+    "service": "Ressources humaines & SST",
+    "quote": "Aborder la gestion des lésions professionnelles, des absences et de l'assignation temporaire."
+  },
+  {
+    "name": "Manutention sécuritaire",
+    "service": "Chariots, nacelles et transpalettes",
+    "quote": "Renforcer les compétences avec des formations sur les équipements de manutention et la sécurité."
+  }
 ];

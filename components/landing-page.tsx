@@ -30,15 +30,15 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { faqs, services, site, testimonials } from "@/lib/site";
+import { faqs, services, site, expertiseCards } from "@/lib/site";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 function Brand({ inverted = false }: { inverted?: boolean }) {
   return (
-    <a aria-label="KlinUp homepage" href="#top" className={`brand ${inverted ? "brand-invert" : ""}`}>
-      <span className="brand-icon" aria-hidden="true"><Sparkles size={20} strokeWidth={2.3} /></span>
-      <span>Klin<span className="brand-tight">Up</span><span className="brand-dot">.</span></span>
+    <a aria-label="Accueil HYB Prévention Conseil" href="#top" className={`brand ${inverted ? "brand-invert" : ""}`}>
+      <span className="brand-icon" aria-hidden="true"><Image src="/hyb-mark.svg" width={29} height={29} alt="" /></span>
+      <span>HYB <span className="brand-tight">Prévention</span><span className="brand-dot">.</span></span>
     </a>
   );
 }
@@ -77,9 +77,9 @@ function Intro() {
         >
           <div className="intro-inner">
             <motion.div initial={{ opacity: 0, y: 17 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.42 }} className="intro-logo">
-              <Sparkles size={32} /><span>KlinUp<span className="accent">.</span></span>
+              <Image src="/hyb-mark.svg" width={42} height={42} alt="" /><span>HYB Prévention<span className="accent">.</span></span>
             </motion.div>
-            <div className="intro-caption">A FRESH START IS COMING</div>
+            <div className="intro-caption">RESTEZ BIEN CONSEILLÉ!</div>
           </div>
           <motion.div className="intro-progress" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: reduced ? 0.01 : 0.88, ease: "easeInOut" }} />
         </motion.div>
@@ -104,24 +104,24 @@ function Nav() {
     window.addEventListener("keydown", onEscape);
     return () => window.removeEventListener("keydown", onEscape);
   }, [open]);
-  const links = [["About", "#about"], ["Services", "#services"], ["Reviews", "#reviews"], ["FAQs", "#faq"]];
+  const links = [["À propos", "#about"], ["Services", "#services"], ["Expertises", "#reviews"], ["FAQ", "#faq"]];
   return (
     <header className={`site-header ${scrolled ? "site-header-scrolled" : ""}`}>
       <div className="nav-shell layout-wrap">
         <Brand />
-        <nav aria-label="Main navigation" className="nav-desktop">
+        <nav aria-label="Navigation principale" className="nav-desktop">
           {links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
         </nav>
-        <a className="button button-orange nav-cta" href="#contact">Book your cleaning <ArrowUpRight size={16} strokeWidth={2} /></a>
+        <a className="button button-orange nav-cta" href="#contact">Nous contacter <ArrowUpRight size={16} strokeWidth={2} /></a>
         <button aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" className="menu-button" type="button" onClick={() => setOpen(!open)}>
           {open ? <X size={23} /> : <Menu size={23} />}
         </button>
       </div>
       <AnimatePresence>
-        {open && <motion.nav id="mobile-nav" className="nav-mobile" aria-label="Mobile navigation"
+        {open && <motion.nav id="mobile-nav" className="nav-mobile" aria-label="Navigation mobile"
           initial={reduced ? false : { opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: .25 }}>
           {links.map(([label, href], i) => <a key={href} style={{ animationDelay: `${i * 40}ms` }} href={href} onClick={() => setOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}
-          <a className="button button-orange" href="#contact" onClick={() => setOpen(false)}>Book your cleaning <ArrowUpRight size={17} /></a>
+          <a className="button button-orange" href="#contact" onClick={() => setOpen(false)}>Nous contacter <ArrowUpRight size={17} /></a>
         </motion.nav>}
       </AnimatePresence>
     </header>
@@ -159,30 +159,30 @@ function Hero() {
     <section className="hero layout-wrap" aria-labelledby="hero-heading">
       <div className="hero-media">
         <motion.div className="hero-picture" style={reduced ? undefined : { y }}>
-          <Image src="/images/hero.webp" alt="Professional cleaning team inside a freshly cleaned home" fill sizes="(max-width: 768px) 100vw, 1440px" priority quality={85} className="hero-image" />
+          <Image src="/images/hero.webp" alt="Visuel de présentation à remplacer par une photo d’un milieu de travail" fill sizes="(max-width: 768px) 100vw, 1440px" priority quality={85} className="hero-image" />
         </motion.div>
         <div className="hero-gradient" />
       </div>
       <div className="hero-grid-text">
         <motion.div className="hero-eyebrow" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: 1.05, ease }}>
-          <span className="hero-eyebrow-dot" /> THE CLEAN HOME CLUB <span className="hero-eyebrow-line" /> MANHATTAN, NY
+          <span className="hero-eyebrow-dot" /> SANTÉ & SÉCURITÉ AU TRAVAIL <span className="hero-eyebrow-line" /> QUÉBEC
         </motion.div>
         <h1 id="hero-heading" className="hero-title">
-          <span className="headline-clip"><motion.span initial={{ y: "110%" }} animate={{ y: "0%" }} transition={{ duration: .95, delay: 1.0, ease }}>Cleaning for</motion.span></span>
-          <span className="headline-clip"><motion.span initial={{ y: "110%" }} animate={{ y: "0%" }} transition={{ duration: .95, delay: 1.12, ease }}>busy people in</motion.span></span>
-          <span className="headline-clip"><motion.span className="accent" initial={{ y: "110%" }} animate={{ y: "0%" }} transition={{ duration: .95, delay: 1.24, ease }}>Manhattan.</motion.span></span>
+          <span className="headline-clip"><motion.span initial={{ y: "110%" }} animate={{ y: "0%" }} transition={{ duration: .95, delay: 1.0, ease }}>La prévention</motion.span></span>
+          <span className="headline-clip"><motion.span initial={{ y: "110%" }} animate={{ y: "0%" }} transition={{ duration: .95, delay: 1.12, ease }}>au cœur de votre</motion.span></span>
+          <span className="headline-clip"><motion.span className="accent" initial={{ y: "110%" }} animate={{ y: "0%" }} transition={{ duration: .95, delay: 1.24, ease }}>entreprise.</motion.span></span>
         </h1>
         <motion.p className="hero-subtitle" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: 1.55, ease }}>{site.description}</motion.p>
         <motion.div className="hero-actions" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: 1.68, ease }}>
-          <a className="button button-orange" href="#contact">Book your cleaning <ArrowUpRight size={17} /></a>
-          <a className="button button-white" href="#services">See services <ArrowRight size={17} /></a>
+          <a className="button button-orange" href="#contact">Nous contacter <ArrowUpRight size={17} /></a>
+          <a className="button button-white" href="#services">Nos services <ArrowRight size={17} /></a>
         </motion.div>
         <motion.div className="hero-rating" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: 1.8, ease }}>
-          <div className="hero-avatar-stack" aria-hidden="true">{[1,2,3,4,5].map((n) => <Image key={n} src={`/images/person-${n}.webp`} alt="" width={35} height={35} />)}</div>
-          <div className="rating-text"><div><strong>4.9 / 5</strong><span className="rating-stars">★★★★★</span></div><span>Sample customer rating · replace before launch</span></div>
+          <div className="hero-avatar-stack" aria-hidden="true"><span><ShieldCheck size={18} /></span><span><BadgeCheck size={18} /></span><span><Heart size={17} /></span></div>
+          <div className="rating-text"><div><strong>Depuis 2012</strong><span className="rating-stars">✦</span></div><span>Formation, prévention SST et conseils RH</span></div>
         </motion.div>
       </div>
-      <a className="hero-scroll" href="#trust" aria-label="Scroll to discover more"><span>SCROLL TO EXPLORE</span><ArrowDown size={16} /></a>
+      <a className="hero-scroll" href="#trust" aria-label="Faire défiler pour découvrir nos services"><span>DÉCOUVRIR</span><ArrowDown size={16} /></a>
       <span className="hero-index">01 — 07</span>
     </section>
   );
@@ -190,14 +190,14 @@ function Hero() {
 
 function Trust() {
   return (
-    <section className="trust-bar" id="trust" aria-label="Our commitments">
+    <section className="trust-bar" id="trust" aria-label="Nos engagements">
       <div className="layout-wrap trust-inner">
-        <div className="trust-heading">A different kind of clean.<br /><span>Built around your life.</span></div>
-        <div className="trust-logos" aria-label="Reasons customers choose us">
-          <div><ShieldCheck size={24} /> TRUSTED CARE</div>
-          <div><Clock3 size={24} /> ON YOUR TIME</div>
-          <div><Leaf size={24} /> MINDFUL PRODUCTS</div>
-          <div><Heart size={24} /> THE LITTLE DETAILS</div>
+        <div className="trust-heading">La sécurité avant tout.<br /><span>Un partenaire à vos côtés.</span></div>
+        <div className="trust-logos" aria-label="Domaines d’intervention">
+          <div><ShieldCheck size={24} /> PRÉVENTION SST</div>
+          <div><Clock3 size={24} /> FORMATIONS</div>
+          <div><Leaf size={24} /> CONSEILS RH</div>
+          <div><Heart size={24} /> PROXIMITÉ</div>
         </div>
       </div>
     </section>
@@ -208,13 +208,13 @@ function Stats() {
   return (
     <section className="stats section-space" aria-labelledby="stats-heading">
       <div className="layout-wrap">
-        <Reveal className="section-center"><SectionTag>THE DETAILS MATTER</SectionTag><h2 id="stats-heading" className="section-title">The little things add up<br /><span className="text-muted">to a lot of peace of mind.</span></h2></Reveal>
+        <Reveal className="section-center"><SectionTag>NOTRE SAVOIR-FAIRE</SectionTag><h2 id="stats-heading" className="section-title">L’expérience au service<br /><span className="text-muted">de votre sécurité.</span></h2></Reveal>
         <div className="stats-grid">
           {[
-            ["15", "+", "Service options & add-ons", "A clean tailored to every space"],
-            ["97", "%", "Our sample satisfaction metric", "Replace with your verified data"],
-            ["25", "+", "Neighborhoods within reach", "Flexible local service"],
-            ["60", "+", "Attention-to-detail checklist", "The details never get skipped"],
+            ["14", "+", "Années en formation", "Formateur de gestionnaires depuis 2012"],
+            ["12", "+", "Années en prévention", "Conseil RH et SST depuis 2014"],
+            ["250", "+", "Employés supervisés", "Expérience de terrain du fondateur"],
+            ["3", "", "Domaines complémentaires", "Prévention SST · RH · Formation"],
           ].map(([number, suffix, label, hint], i) => (
             <Reveal key={label} className="stat-item" delay={i * .07}>
               <div className="stat-count"><Counter value={Number(number)} suffix={suffix} /></div>
@@ -228,20 +228,20 @@ function Stats() {
 }
 
 function About() {
-  const points = ["Experienced cleaners you can trust", "Fast, flexible & on-time service", "Thoughtful products for every surface", "Clear pricing with no surprises"];
+  const points = ["Conseils en santé et sécurité du travail", "Formations pratiques et adaptées", "Accompagnement des gestionnaires", "Approche ancrée dans la réalité des PME"];
   return (
     <section id="about" className="about section-space" aria-labelledby="about-heading">
       <div className="layout-wrap about-grid">
         <div className="about-photo-wrap">
-          <Reveal className="about-photo-main"><Image src="/images/about-main.webp" alt="Cleaner working in a bright apartment" fill sizes="(max-width: 800px) 95vw, 540px" className="img-cover" /></Reveal>
-          <Reveal className="about-photo-inset" delay={.18}><Image src="/images/about-side.webp" alt="A professional cleaning a countertop" fill sizes="220px" className="img-cover" /></Reveal>
-          <motion.div className="about-sticker" whileHover={{ rotate: 10, scale: 1.06 }}><Sparkles size={25} /><span>A fresh<br />perspective.</span></motion.div>
+          <Reveal className="about-photo-main"><Image src="/images/about-main.webp" alt="Visuel de présentation, à remplacer par une photo d’équipe HYB" fill sizes="(max-width: 800px) 95vw, 540px" className="img-cover" /></Reveal>
+          <Reveal className="about-photo-inset" delay={.18}><Image src="/images/about-side.webp" alt="Visuel de présentation, à remplacer par une photo de formation HYB" fill sizes="220px" className="img-cover" /></Reveal>
+          <motion.div className="about-sticker" whileHover={{ rotate: 10, scale: 1.06 }}><Sparkles size={25} /><span>Restez bien<br />conseillé!</span></motion.div>
         </div>
         <div className="about-content">
-          <Reveal><SectionTag>ABOUT KLINUP</SectionTag><h2 id="about-heading" className="section-title">A clean you can <em>feel.</em><br />A team you can <span className="text-muted">trust.</span></h2></Reveal>
-          <Reveal delay={.1}><p className="section-copy">At KlinUp, we believe a clean space changes everything. We bring careful attention, friendly faces, and reliable service to the places that matter most — your home, your time, your peace of mind.</p></Reveal>
+          <Reveal><SectionTag>À PROPOS DE HYB</SectionTag><h2 id="about-heading" className="section-title">La prévention qui <em>protège.</em><br />Des conseils qui <span className="text-muted">font avancer.</span></h2></Reveal>
+          <Reveal delay={.1}><p className="section-copy">Fondée par Hygo Bisimwa, HYB Prévention Conseil accompagne les PME du Québec en santé et sécurité du travail, en gestion des ressources humaines et en formation. Une expertise nourrie par l’expérience concrète des milieux industriels et des relations de travail.</p></Reveal>
           <Reveal className="about-checklist" delay={.16}>{points.map(p => <div className="check-row" key={p}><span className="check-bubble"><Check size={17} strokeWidth={2.5} /></span>{p}</div>)}</Reveal>
-          <Reveal delay={.23}><a href="#contact" className="button button-orange">Book your cleaning <ArrowUpRight size={17} /></a></Reveal>
+          <Reveal delay={.23}><a href="#contact" className="button button-orange">Nous contacter <ArrowUpRight size={17} /></a></Reveal>
         </div>
       </div>
     </section>
@@ -250,21 +250,21 @@ function About() {
 
 function Process() {
   const cards = [
-    { icon: CalendarDays, index: "01", title: "Book your clean", copy: "Tell us what you need and pick a time that fits your schedule." },
-    { icon: Sparkles, index: "02", title: "We bring the good stuff", copy: "Your cleaner arrives ready, with the tools and care to get it done." },
-    { icon: Heart, index: "03", title: "Come home to fresh", copy: "A thoughtfully cleaned space, reset and ready to enjoy." },
-    { icon: Clock3, index: "04", title: "Keep it that way", copy: "Make clean a habit with easy recurring appointments." },
+    { icon: CalendarDays, index: "01", title: "Échange initial", copy: "Présentez-nous votre entreprise et vos besoins en SST, RH ou formation." },
+    { icon: Sparkles, index: "02", title: "Analyse des besoins", copy: "Nous ciblons les enjeux à traiter et les compétences à développer." },
+    { icon: Heart, index: "03", title: "Solutions adaptées", copy: "Nous proposons des interventions et des formations selon votre réalité." },
+    { icon: Clock3, index: "04", title: "Suivi et progression", copy: "Faites évoluer vos pratiques et les compétences de vos équipes." },
   ];
   return (
     <section className="process section-space" aria-labelledby="process-heading">
       <div className="layout-wrap">
-        <Reveal className="section-center"><SectionTag>HOW IT WORKS</SectionTag><h2 id="process-heading" className="section-title">From booking to bliss.<br /><span className="text-muted">Easy as 1, 2, clean.</span></h2></Reveal>
+        <Reveal className="section-center"><SectionTag>NOTRE APPROCHE</SectionTag><h2 id="process-heading" className="section-title">Des besoins aux solutions.<br /><span className="text-muted">Une approche en 4 étapes.</span></h2></Reveal>
         <div className="process-layout">
           <div className="process-stack">{cards.slice(0,2).map((c,i) => <ProcessCard key={c.index} {...c} delay={i*.08} />)}</div>
-          <Reveal className="process-image" delay={.12}><Image src="/images/process.webp" alt="A couple enjoying their freshly cleaned living room" fill sizes="(max-width: 850px) 90vw, 500px" className="img-cover" /><div className="process-image-label"><Sparkles size={19} /> LESS MESS. MORE LIFE.</div></Reveal>
+          <Reveal className="process-image" delay={.12}><Image src="/images/process.webp" alt="Visuel d’illustration du parcours de conseil" fill sizes="(max-width: 850px) 90vw, 500px" className="img-cover" /><div className="process-image-label"><Sparkles size={19} /> MIEUX PRÉVENIR. MIEUX GRANDIR.</div></Reveal>
           <div className="process-stack">{cards.slice(2).map((c,i) => <ProcessCard key={c.index} {...c} delay={.16+i*.08} />)}</div>
         </div>
-        <Reveal className="process-bottom"><a href="#contact" className="button button-orange">Book your cleaning <ArrowUpRight size={17} /></a></Reveal>
+        <Reveal className="process-bottom"><a href="#contact" className="button button-orange">Nous contacter <ArrowUpRight size={17} /></a></Reveal>
       </div>
     </section>
   );
@@ -281,13 +281,13 @@ function Services() {
   return (
     <section id="services" className="services section-space" aria-labelledby="services-heading">
       <div className="layout-wrap">
-        <Reveal className="section-center"><SectionTag>OUR SERVICES</SectionTag><h2 id="services-heading" className="section-title">Reliable cleaning services<br /><span className="text-muted">made for your life.</span></h2><p className="section-subcopy">A fresh start, whatever your space needs.</p></Reveal>
+        <Reveal className="section-center"><SectionTag>NOS SERVICES</SectionTag><h2 id="services-heading" className="section-title">Des solutions concrètes<br /><span className="text-muted">pour votre organisation.</span></h2><p className="section-subcopy">SST, formations et ressources humaines pour les PME du Québec.</p></Reveal>
         <div className="services-grid">
           {services.map((s, i) => <Reveal className="service-card" key={s.name} delay={i * .12}>
             <div className="service-top"><div><span className="service-index">SERVICE / {s.number}</span><h3>{s.name}</h3><p>{s.short}</p></div><span className="service-spark">✳</span></div>
-            <div className="service-image"><Image src={s.image} alt={`${s.name} service`} fill sizes="(max-width: 750px) 90vw, (max-width: 1000px) 45vw, 420px" className="img-cover" /></div>
+            <div className="service-image"><Image src={s.image} alt={`Illustration du service : ${s.name} (photo à actualiser)`} fill sizes="(max-width: 750px) 90vw, (max-width: 1000px) 45vw, 420px" className="img-cover" /></div>
             <ul className="service-list">{s.list.map(item => <li key={item}><span><Check size={12} strokeWidth={3} /></span>{item}</li>)}</ul>
-            <a className="service-action" href="#contact"><span>Book this service</span><span className="service-arrow"><ArrowUpRight size={19} /></span></a>
+            <a className="service-action" href="#contact"><span>Discuter du service</span><span className="service-arrow"><ArrowUpRight size={19} /></span></a>
           </Reveal>)}
         </div>
       </div>
@@ -300,34 +300,34 @@ function BeforeAfter() {
   return (
     <section className="transformation section-space" aria-labelledby="transform-heading">
       <div className="layout-wrap">
-        <Reveal className="section-center"><SectionTag>THE TRANSFORMATION</SectionTag><h2 id="transform-heading" className="section-title">The difference is<br /><span className="text-muted">in the details.</span></h2><p className="section-subcopy">Drag the handle to see what a fresh start can look like.</p></Reveal>
+        <Reveal className="section-center"><SectionTag>LA DÉMARCHE DE PRÉVENTION</SectionTag><h2 id="transform-heading" className="section-title">La prévention commence<br /><span className="text-muted">par une meilleure vision.</span></h2><p className="section-subcopy">Glissez le curseur pour comparer un environnement avant et après une démarche structurée.</p></Reveal>
         <Reveal className="compare-outer">
           <div className="comparison">
-            <Image className="comparison-base" src="/images/room-before.webp" alt="Living room before a full cleaning" fill sizes="(max-width: 800px) 100vw, 1100px" />
+            <Image className="comparison-base" src="/images/room-before.webp" alt="Visuel illustratif avant mise en place de mesures SST" fill sizes="(max-width: 800px) 100vw, 1100px" />
             <div className="comparison-after" style={{ clipPath: `inset(0 ${100 - value}% 0 0)` }}>
-              <Image className="comparison-base" src="/images/room-after.webp" alt="The same living room after cleaning" fill sizes="(max-width: 800px) 100vw, 1100px" />
+              <Image className="comparison-base" src="/images/room-after.webp" alt="Visuel illustratif après mise en place de mesures SST" fill sizes="(max-width: 800px) 100vw, 1100px" />
             </div>
-            <span className="compare-label compare-label-before">BEFORE</span><span className="compare-label compare-label-after">AFTER</span>
+            <span className="compare-label compare-label-before">AVANT</span><span className="compare-label compare-label-after">APRÈS</span>
             <div className="comparison-bar" style={{ left: `${value}%` }} aria-hidden="true"><span className="comparison-handle">‹&nbsp;&nbsp;›</span></div>
-            <input aria-label="Reveal cleaning before and after" aria-valuetext={`${value}% after image visible`} className="compare-range" type="range" min={0} max={100} value={value} onChange={e => setValue(Number(e.target.value))} />
+            <input aria-label="Comparer les étapes avant et après la prévention" aria-valuetext={`${value}% de l’image après visible`} className="compare-range" type="range" min={0} max={100} value={value} onChange={e => setValue(Number(e.target.value))} />
           </div>
-          <div className="compare-bottom"><div><span className="orange-tick" /> A LITTLE LOVE GOES A LONG WAY</div><div>BEFORE <span className="compare-bottom-arrow">↔</span> AFTER</div></div>
+          <div className="compare-bottom"><div><span className="orange-tick" /> UNE DÉMARCHE ADAPTÉE AUX RISQUES</div><div>AVANT <span className="compare-bottom-arrow">↔</span> APRÈS</div></div>
         </Reveal>
       </div>
     </section>
   );
 }
 
-function Reviews() {
+function Expertises() {
   return (
     <section id="reviews" className="reviews section-space" aria-labelledby="reviews-heading">
       <div className="layout-wrap">
-        <Reveal className="reviews-head"><div><SectionTag>TESTIMONIALS</SectionTag><h2 id="reviews-heading" className="section-title">Good words.<br /><span className="text-muted">Great feeling.</span></h2></div><p>Our favorite kind of feedback? Walking into a home that feels like new again. <span className="sample-note">Sample reviews for layout demonstration.</span></p></Reveal>
+        <Reveal className="reviews-head"><div><SectionTag>NOS EXPERTISES</SectionTag><h2 id="reviews-heading" className="section-title">Des compétences variées.<br /><span className="text-muted">Un même engagement.</span></h2></div><p>La prévention, la formation et le conseil RH se complètent pour accompagner vos équipes au quotidien.</p></Reveal>
         <div className="review-grid">
-          {testimonials.map((t,i) => <Reveal className="review-card" key={t.name} delay={(i%3)*.08}>
-            <div className="review-top"><span className="review-stars" aria-label="5 stars">★★★★★</span><Quote size={21} strokeWidth={1.5} /></div>
-            <blockquote>“{t.quote}”</blockquote>
-            <div className="review-person"><Image src={t.image} alt="" width={44} height={44} /><div><strong>{t.name}</strong><span>{t.service}</span></div><BadgeCheck size={17} className="review-check" /></div>
+          {expertiseCards.map((t,i) => <Reveal className="review-card" key={t.name} delay={(i%3)*.08}>
+            <div className="review-top"><span className="review-stars" aria-label="Expertise HYB">HYB • EXPERTISE</span><Quote size={21} strokeWidth={1.5} /></div>
+            <blockquote>{t.quote}</blockquote>
+            <div className="review-person"><span className="review-avatar"><ShieldCheck size={19} /></span><div><strong>{t.name}</strong><span>{t.service}</span></div><BadgeCheck size={17} className="review-check" /></div>
           </Reveal>)}
         </div>
       </div>
@@ -341,7 +341,7 @@ function FAQ() {
   return (
     <section id="faq" className="faq section-space" aria-labelledby="faq-heading">
       <div className="layout-wrap faq-layout">
-        <Reveal className="faq-heading"><SectionTag>FAQS</SectionTag><h2 id="faq-heading" className="section-title">The good-to-<br />know stuff<span className="accent">.</span></h2><p>Still have a question? We’d love to help.</p><a href="#contact" className="button button-outline">Ask us anything <ArrowUpRight size={17} /></a></Reveal>
+        <Reveal className="faq-heading"><SectionTag>FAQS</SectionTag><h2 id="faq-heading" className="section-title">Les réponses à<br />vos questions<span className="accent">.</span></h2><p>Une question sur la SST ou nos formations?</p><a href="#contact" className="button button-outline">Posez-nous votre question <ArrowUpRight size={17} /></a></Reveal>
         <Reveal className="faq-items" delay={.1}>
           {faqs.map((item,i) => <div className={`faq-item ${opened === i ? "faq-open" : ""}`} key={item.q}>
             <button className="faq-question" aria-expanded={opened === i} aria-controls={`faq-answer-${i}`} onClick={() => setOpened(opened === i ? null : i)}>
@@ -366,35 +366,35 @@ function Contact() {
       const result = await res.json();
       if (res.ok) { setStatus("sent");setData({ name: "", phone: "", email: "", service: "", message: "", website: "" });return; }
       if (result.code === "NOT_CONFIGURED") {
-        const body = `Hi KlinUp,\n\nI'd like to request a cleaning.\n\nName: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nService: ${data.service}\n\n${data.message}`;
-        window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`Cleaning enquiry — ${data.service}`)}&body=${encodeURIComponent(body)}`;
+        const body = `Bonjour HYB Prévention Conseil,\n\nJe souhaite discuter de vos services.\n\nNom : ${data.name}\nTéléphone : ${data.phone}\nCourriel : ${data.email}\nService : ${data.service}\n\n${data.message}`;
+        window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`Demande de renseignements — ${data.service}`)}&body=${encodeURIComponent(body)}`;
         setStatus("fallback");return;
       }
-      throw new Error(result.error || "Couldn't send your message. Please try again.");
-    } catch(err) { setError(err instanceof Error ? err.message : "Couldn't send your message.");setStatus("error"); }
+      throw new Error(result.error || "Impossible d’envoyer le message. Veuillez réessayer.");
+    } catch(err) { setError(err instanceof Error ? err.message : "Impossible d’envoyer le message.");setStatus("error"); }
   }
   return (
     <section id="contact" className="contact section-space" aria-labelledby="contact-heading">
       <div className="layout-wrap contact-layout">
-        <Reveal className="contact-info"><SectionTag>LET'S GET CLEANING</SectionTag><h2 id="contact-heading" className="section-title">Your spotless<br />home <em>awaits.</em></h2><p>Book a cleaning team that shows up, pays attention, and leaves your home feeling like a fresh start. Tell us a little about your space — we’ll take it from there.</p>
-          <div className="contact-details"><span>DON'T LIKE FORMS? REACH OUT DIRECTLY.</span><a href={`tel:${site.phone.replace(/\D/g, "")}`}><Phone size={18} />{site.phone}</a><a href={`mailto:${site.email}`}><Mail size={18} />{site.email}</a></div>
-          <div className="contact-small-note"><Sparkles size={23} /> A little cleaner.<br />A lot happier.</div>
+        <Reveal className="contact-info"><SectionTag>PARLONS DE VOS BESOINS</SectionTag><h2 id="contact-heading" className="section-title">Un milieu de travail<br /><em>plus sûr.</em></h2><p>Vous avez un projet de formation, un enjeu en SST ou un besoin en ressources humaines? Parlons de vos priorités pour déterminer l’accompagnement qui vous convient.</p>
+          <div className="contact-details"><span>VOUS PRÉFÉREZ NOUS JOINDRE DIRECTEMENT?</span><a href={`tel:${site.phone.replace(/\D/g, "")}`}><Phone size={18} />{site.phone}</a><a href={`mailto:${site.email}`}><Mail size={18} />{site.email}</a></div>
+          <div className="contact-small-note"><Sparkles size={23} /> Restez bien<br />conseillé!</div>
         </Reveal>
         <Reveal className="form-card" delay={.12}>
-          <div className="form-header"><div><span>START HERE</span><h3>Tell us about your space.</h3></div><span className="form-arrow"><ArrowUpRight size={22} /></span></div>
+          <div className="form-header"><div><span>PARLONS-EN</span><h3>Parlez-nous de votre entreprise.</h3></div><span className="form-arrow"><ArrowUpRight size={22} /></span></div>
           <form onSubmit={submit}>
-            <div className="form-row"><label>Full name <span>*</span><input required maxLength={100} autoComplete="name" placeholder="Your name" value={data.name} onChange={e=>setData({...data,name:e.target.value})}/></label><label>Phone number<input type="tel" maxLength={60} autoComplete="tel" placeholder="(555) 000-0000" value={data.phone} onChange={e=>setData({...data,phone:e.target.value})}/></label></div>
-            <label>Email address <span>*</span><input required type="email" maxLength={200} autoComplete="email" placeholder="you@example.com" value={data.email} onChange={e=>setData({...data,email:e.target.value})}/></label>
-            <label>Which service are you looking for? <span>*</span><span className="select-wrap"><select required value={data.service} onChange={e=>setData({...data,service:e.target.value})}><option value="">Select a service</option><option>Deep Cleaning</option><option>Move-Out Cleaning</option><option>Airbnb Turnover</option><option>Other</option></select><ChevronDown size={16} aria-hidden="true" /></span></label>
-            <label>Anything else we should know?<textarea maxLength={2500} rows={3} placeholder="Tell us a little about your space, timeline, and what you'd like cleaned..." value={data.message} onChange={e=>setData({...data,message:e.target.value})} /></label>
+            <div className="form-row"><label>Nom complet <span>*</span><input required maxLength={100} autoComplete="name" placeholder="Votre nom" value={data.name} onChange={e=>setData({...data,name:e.target.value})}/></label><label>Téléphone<input type="tel" maxLength={60} autoComplete="tel" placeholder="(514) 000-0000" value={data.phone} onChange={e=>setData({...data,phone:e.target.value})}/></label></div>
+            <label>Adresse courriel <span>*</span><input required type="email" maxLength={200} autoComplete="email" placeholder="vous@entreprise.ca" value={data.email} onChange={e=>setData({...data,email:e.target.value})}/></label>
+            <label>Quel service vous intéresse? <span>*</span><span className="select-wrap"><select required value={data.service} onChange={e=>setData({...data,service:e.target.value})}><option value="">Choisir un service</option><option>Prévention &amp; SST</option><option>Formations sur mesure</option><option>Conseils en RH</option><option>Autre demande</option></select><ChevronDown size={16} aria-hidden="true" /></span></label>
+            <label>Précisez vos besoins<textarea maxLength={2500} rows={3} placeholder="Votre secteur, vos enjeux, vos objectifs de formation..." value={data.message} onChange={e=>setData({...data,message:e.target.value})} /></label>
             <label className="honeypot" aria-hidden="true">Website<input tabIndex={-1} autoComplete="off" value={data.website} onChange={e=>setData({...data,website:e.target.value})}/></label>
-            <button className="button button-orange form-submit" type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending…" : "Send my inquiry"} <ArrowUpRight size={18} /></button>
+            <button className="button button-orange form-submit" type="submit" disabled={status === "sending"}>{status === "sending" ? "Envoi…" : "Envoyer ma demande"} <ArrowUpRight size={18} /></button>
             <div className="form-status" role="status" aria-live="polite">
-              {status === "sent" && <span className="form-success">Thanks! Your inquiry has been sent.</span>}
-              {status === "fallback" && <span>Your email app should open with your inquiry ready to send. Please send that email to complete your request.</span>}
-              {status === "error" && <span className="form-error">{error} You can also <a href={`mailto:${site.email}`}>email us directly.</a></span>}
+              {status === "sent" && <span className="form-success">Merci! Votre demande a bien été envoyée.</span>}
+              {status === "fallback" && <span>Votre application de courriel devrait ouvrir un message prêt à envoyer. Veuillez l’envoyer pour finaliser votre demande.</span>}
+              {status === "error" && <span className="form-error">{error} Vous pouvez aussi <a href={`mailto:${site.email}`}>nous écrire directement.</a></span>}
             </div>
-            <p className="form-footnote"><ShieldCheck size={15} /> Your information is only used to respond to your inquiry.</p>
+            <p className="form-footnote"><ShieldCheck size={15} /> Vos renseignements servent uniquement à répondre à votre demande.</p>
           </form>
         </Reveal>
       </div>
@@ -407,9 +407,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="layout-wrap">
-        <div className="footer-top"><div><Brand inverted /><p>A clean space. A clearer mind.<br />Good things start at home.</p></div><div className="footer-links"><div><h3>Explore</h3><a href="#about">About us</a><a href="#services">Our services</a><a href="#reviews">Reviews</a><a href="#faq">FAQs</a></div><div><h3>Get in touch</h3><a href="#contact">Book a clean</a><a href={`mailto:${site.email}`}>Send an email</a><a href={`tel:${site.phone.replace(/\D/g,"")}`}>Give us a call</a></div></div></div>
-        <div className="footer-big" aria-hidden="true">klinup<span>.</span></div>
-        <div className="footer-bottom"><span>© {year} KlinUp. All rights reserved.</span><span>Made with care. <Heart size={13} fill="currentColor" /></span><a href="#top">BACK TO TOP ↑</a></div>
+        <div className="footer-top"><div><Brand inverted /><p>SST, ressources humaines et formation.<br />Restez bien conseillé!</p></div><div className="footer-links"><div><h3>Explorer</h3><a href="#about">À propos</a><a href="#services">Nos services</a><a href="#reviews">Expertises</a><a href="#faq">FAQ</a></div><div><h3>Contact</h3><a href="#contact">Nous contacter</a><a href={`mailto:${site.email}`}>Écrivez-nous</a><a href={`tel:${site.phone.replace(/\D/g,"")}`}>Appelez-nous</a></div></div></div>
+        <div className="footer-big" aria-hidden="true">HYB<span>.</span></div>
+        <div className="footer-bottom"><span>© {year} HYB Prévention Conseil. Tous droits réservés.</span><span>Restez bien conseillé. <Heart size={13} fill="currentColor" /></span><a href="#top">RETOUR EN HAUT ↑</a></div>
       </div>
     </footer>
   );
@@ -424,7 +424,7 @@ export function LandingPage() {
       <motion.div aria-hidden="true" className="scroll-progress" style={{ scaleX: progress }} />
       <div id="top" />
       <Nav />
-      <main><Hero /><Trust /><Stats /><About /><Process /><Services /><BeforeAfter /><Reviews /><FAQ /><Contact /></main>
+      <main><Hero /><Trust /><Stats /><About /><Process /><Services /><BeforeAfter /><Expertises /><FAQ /><Contact /></main>
       <Footer />
     </>
   );
