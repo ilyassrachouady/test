@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
-  title: "HYB Prévention Conseil | Santé et sécurité, RH et formations au Québec",
-  description: "HYB Prévention Conseil, fondée par Hygo Bisimwa : prévention en santé et sécurité du travail, formations sur mesure et conseils en ressources humaines pour les entreprises du Québec.",
-  openGraph: { title: "HYB Prévention Conseil — Restez bien conseillé!", description: "Santé et sécurité du travail, ressources humaines et formations adaptées à votre entreprise.", type: "website", locale: "fr_CA" },
+  title: "HYB Prévention Conseil | Services de nettoyage au Québec",
+  description: "HYB Prévention : découvrez notre offre de grand ménage, nettoyage de déménagement et entretien de locations de courte durée au Québec.",
+  openGraph: { title: "HYB Prévention — Un espace propre, l’esprit léger", description: "Grand ménage, nettoyage de déménagement et entretien de locations : un intérieur frais et accueillant.", type: "website", locale: "fr_CA" },
   robots: { index: false, follow: false },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
