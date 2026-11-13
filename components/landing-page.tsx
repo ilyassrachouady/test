@@ -21,6 +21,12 @@ import {
   ChevronDown,
   Clock3,
   Heart,
+  Asterisk,
+  ArrowLeftRight,
+  ArrowUp,
+  ChevronsLeftRight,
+  Plus,
+  Minus,
   Leaf,
   Mail,
   Menu,
@@ -179,7 +185,7 @@ function Hero() {
         </motion.div>
         <motion.div className="hero-rating" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: 1.8, ease }}>
           <div className="hero-avatar-stack" aria-hidden="true"><span><ShieldCheck size={18} /></span><span><BadgeCheck size={18} /></span><span><Heart size={17} /></span></div>
-          <div className="rating-text"><div><strong>Depuis 2012</strong><span className="rating-stars">✦</span></div><span>Formation, prévention SST et conseils RH</span></div>
+          <div className="rating-text"><div><strong>Depuis 2012</strong><span className="rating-stars"><Sparkles size={13} strokeWidth={2} aria-hidden="true" /></span></div><span>Formation, prévention SST et conseils RH</span></div>
         </motion.div>
       </div>
       <a className="hero-scroll" href="#trust" aria-label="Faire défiler pour découvrir nos services"><span>DÉCOUVRIR</span><ArrowDown size={16} /></a>
@@ -284,7 +290,7 @@ function Services() {
         <Reveal className="section-center"><SectionTag>NOS SERVICES</SectionTag><h2 id="services-heading" className="section-title">Des solutions concrètes<br /><span className="text-muted">pour votre organisation.</span></h2><p className="section-subcopy">SST, formations et ressources humaines pour les PME du Québec.</p></Reveal>
         <div className="services-grid">
           {services.map((s, i) => <Reveal className="service-card" key={s.name} delay={i * .12}>
-            <div className="service-top"><div><span className="service-index">SERVICE / {s.number}</span><h3>{s.name}</h3><p>{s.short}</p></div><span className="service-spark">✳</span></div>
+            <div className="service-top"><div><span className="service-index">SERVICE / {s.number}</span><h3>{s.name}</h3><p>{s.short}</p></div><span className="service-spark"><Asterisk size={27} strokeWidth={2.2} aria-hidden="true" /></span></div>
             <div className="service-image"><Image src={s.image} alt={`Illustration du service : ${s.name} (photo à actualiser)`} fill sizes="(max-width: 750px) 90vw, (max-width: 1000px) 45vw, 420px" className="img-cover" /></div>
             <ul className="service-list">{s.list.map(item => <li key={item}><span><Check size={12} strokeWidth={3} /></span>{item}</li>)}</ul>
             <a className="service-action" href="#contact"><span>Discuter du service</span><span className="service-arrow"><ArrowUpRight size={19} /></span></a>
@@ -308,10 +314,10 @@ function BeforeAfter() {
               <Image className="comparison-base" src="/images/room-after.webp" alt="Visuel illustratif après mise en place de mesures SST" fill sizes="(max-width: 800px) 100vw, 1100px" />
             </div>
             <span className="compare-label compare-label-before">AVANT</span><span className="compare-label compare-label-after">APRÈS</span>
-            <div className="comparison-bar" style={{ left: `${value}%` }} aria-hidden="true"><span className="comparison-handle">‹&nbsp;&nbsp;›</span></div>
+            <div className="comparison-bar" style={{ left: `${value}%` }} aria-hidden="true"><span className="comparison-handle"><ChevronsLeftRight size={26} strokeWidth={2} aria-hidden="true" /></span></div>
             <input aria-label="Comparer les étapes avant et après la prévention" aria-valuetext={`${value}% de l’image après visible`} className="compare-range" type="range" min={0} max={100} value={value} onChange={e => setValue(Number(e.target.value))} />
           </div>
-          <div className="compare-bottom"><div><span className="orange-tick" /> UNE DÉMARCHE ADAPTÉE AUX RISQUES</div><div>AVANT <span className="compare-bottom-arrow">↔</span> APRÈS</div></div>
+          <div className="compare-bottom"><div><span className="orange-tick" /> UNE DÉMARCHE ADAPTÉE AUX RISQUES</div><div>AVANT <span className="compare-bottom-arrow"><ArrowLeftRight size={18} strokeWidth={2} aria-hidden="true" /></span> APRÈS</div></div>
         </Reveal>
       </div>
     </section>
@@ -345,7 +351,7 @@ function FAQ() {
         <Reveal className="faq-items" delay={.1}>
           {faqs.map((item,i) => <div className={`faq-item ${opened === i ? "faq-open" : ""}`} key={item.q}>
             <button className="faq-question" aria-expanded={opened === i} aria-controls={`faq-answer-${i}`} onClick={() => setOpened(opened === i ? null : i)}>
-              <span>{String(i+1).padStart(2,"0")}</span><strong>{item.q}</strong><span className="faq-plus">{opened === i ? "−" : "+"}</span>
+              <span>{String(i+1).padStart(2,"0")}</span><strong>{item.q}</strong><span className="faq-plus">{opened === i ? <Minus size={17} strokeWidth={2} aria-hidden="true" /> : <Plus size={17} strokeWidth={2} aria-hidden="true" />}</span>
             </button>
             <AnimatePresence initial={false}>{opened === i && <motion.div id={`faq-answer-${i}`} role="region" initial={reduced ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: reduced ? 0 : .27, ease: "easeInOut" }} className="faq-answer"><p>{item.a}</p></motion.div>}</AnimatePresence>
           </div>)}
@@ -409,7 +415,7 @@ function Footer() {
       <div className="layout-wrap">
         <div className="footer-top"><div><Brand inverted /><p>SST, ressources humaines et formation.<br />Restez bien conseillé!</p></div><div className="footer-links"><div><h3>Explorer</h3><a href="#about">À propos</a><a href="#services">Nos services</a><a href="#reviews">Expertises</a><a href="#faq">FAQ</a></div><div><h3>Contact</h3><a href="#contact">Nous contacter</a><a href={`mailto:${site.email}`}>Écrivez-nous</a><a href={`tel:${site.phone.replace(/\D/g,"")}`}>Appelez-nous</a></div></div></div>
         <div className="footer-big" aria-hidden="true">HYB<span>.</span></div>
-        <div className="footer-bottom"><span>© {year} HYB Prévention Conseil. Tous droits réservés.</span><span>Restez bien conseillé. <Heart size={13} fill="currentColor" /></span><a href="#top">RETOUR EN HAUT ↑</a></div>
+        <div className="footer-bottom"><span>© {year} HYB Prévention Conseil. Tous droits réservés.</span><span>Restez bien conseillé. <Heart size={13} fill="currentColor" /></span><a href="#top">RETOUR EN HAUT <ArrowUp size={14} strokeWidth={2} aria-hidden="true" /></a></div>
       </div>
     </footer>
   );
