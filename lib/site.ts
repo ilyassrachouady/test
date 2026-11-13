@@ -1,118 +1,56 @@
-// Verified details from hybpreventionconseil.ca. Original cleaning photography is illustrative and must be replaced with approved HYB visuals before launch.
+// Reusable cleaning-services content for the HYB-branded website.
+// Company contacts come from HYB Prévention Conseil's public website; cleaning offerings are a proposed site concept, not independently verified.
 export const site = {
-  "name": "HYB Prévention Conseil",
-  "shortName": "HYB Prévention",
-  "founder": "Hygo Bisimwa",
-  "location": "Québec",
-  "phone": "(514) 206-7171",
-  "email": "info@hybpreventionconseil.ca",
-  "slogan": "Restez bien conseillé!",
-  "tagline": "La prévention au cœur de votre entreprise.",
-  "description": "SST, ressources humaines et formations sur mesure : des conseils concrets pour protéger vos équipes et faire progresser votre entreprise au Québec."
+  name: "HYB Prévention Conseil",
+  shortName: "HYB Prévention",
+  founder: "Hygo Bisimwa",
+  location: "Québec",
+  phone: "(514) 206-7171",
+  email: "info@hybpreventionconseil.ca",
+  slogan: "Un espace propre, l’esprit léger.",
+  tagline: "La propreté, pensée pour vous.",
+  description: "Grand ménage, nettoyage de déménagement et entretien de locations de courte durée : retrouvez un espace propre, frais et accueillant, sans complications.",
 };
 
 export const services = [
   {
-    "number": "01",
-    "name": "Prévention & SST",
-    "short": "Des milieux de travail plus sûrs grâce à une prévention adaptée à vos réalités.",
-    "image": "/images/deep-clean.webp",
-    "list": [
-      "Programmes de prévention",
-      "Inspection des lieux de travail",
-      "Analyse sécuritaire des tâches",
-      "Cadenassage et sécurité des machines",
-      "Audits et conformité SST"
-    ]
+    number: "01",
+    name: "Grand ménage",
+    short: "Un nettoyage en profondeur qui redonne de l’éclat à chaque pièce.",
+    image: "/images/deep-clean.webp",
+    list: ["Cuisine et salle de bain", "Plinthes et surfaces", "Intérieur des armoires sur demande", "Électroménagers et comptoirs", "Sols, coins et endroits difficiles d’accès"],
   },
   {
-    "number": "02",
-    "name": "Formations sur mesure",
-    "short": "Des formations pratiques pour outiller vos travailleurs et gestionnaires.",
-    "image": "/images/move-out.webp",
-    "list": [
-      "Chariots élévateurs et transpalettes",
-      "Nacelles et plateformes élévatrices",
-      "Premiers soins et RCR",
-      "Extincteurs et sécurité incendie",
-      "SIMDUT, législation et prévention"
-    ]
+    number: "02",
+    name: "Nettoyage de déménagement",
+    short: "Une remise en état soignée avant de partir ou de vous installer.",
+    image: "/images/move-out.webp",
+    list: ["Nettoyage complet des pièces", "Cuisine et électroménagers", "Salles de bain et sanitaires", "Armoires, placards et tiroirs", "Planchers et surfaces vitrées accessibles"],
   },
   {
-    "number": "03",
-    "name": "Conseils en RH",
-    "short": "Un accompagnement humain pour la gestion et le développement de vos équipes.",
-    "image": "/images/airbnb.webp",
-    "list": [
-      "Gestion des conflits professionnels",
-      "Accueil et intégration",
-      "Gestion des absences et des lésions",
-      "Développement des compétences",
-      "Accompagnement des gestionnaires"
-    ]
-  }
+    number: "03",
+    name: "Entretien de locations",
+    short: "Un espace propre et prêt à accueillir les prochains voyageurs.",
+    image: "/images/airbnb.webp",
+    list: ["Nettoyage entre deux séjours", "Cuisine et salle de bain", "Lits et linge sur demande", "Poubelles et recyclage", "Vérification visuelle des espaces"],
+  },
 ];
 
 export const faqs = [
-  {
-    "q": "Quels services offre HYB Prévention Conseil?",
-    "a": "Nous accompagnons les organisations en santé et sécurité du travail (SST), gestion des ressources humaines et formation de travailleurs, notamment avec des programmes de prévention et des formations sur mesure."
-  },
-  {
-    "q": "À qui s'adressent vos services?",
-    "a": "Nous intervenons auprès des petites et moyennes entreprises du Québec, notamment dans les secteurs agroalimentaire, de la construction, du transport, de la restauration et de l'hôtellerie."
-  },
-  {
-    "q": "Proposez-vous des formations en entreprise?",
-    "a": "Oui. Nos services comprennent des formations sur mesure pour les travailleurs, les gestionnaires, les superviseurs et les chefs d'équipe. Contactez-nous pour discuter du format et des besoins de votre organisation."
-  },
-  {
-    "q": "Offrez-vous des formations pour les chariots élévateurs?",
-    "a": "Oui. HYB Prévention Conseil propose notamment des formations pour les chariots élévateurs, les transpalettes électriques, les nacelles et les plateformes élévatrices."
-  },
-  {
-    "q": "Pouvez-vous aider à établir un programme de prévention SST?",
-    "a": "Oui. Nos services abordent la planification de programmes de prévention, l'inspection des milieux de travail, l'analyse sécuritaire des tâches et le cadenassage des machines."
-  },
-  {
-    "q": "Offrez-vous aussi des conseils en ressources humaines?",
-    "a": "Oui. Nous accompagnons les employeurs et gestionnaires sur des enjeux comme l'intégration du personnel, la prévention du harcèlement, la gestion des conflits et le développement des compétences."
-  },
-  {
-    "q": "Comment obtenir une proposition ou connaître les tarifs?",
-    "a": "Décrivez-nous votre organisation et vos besoins à l'aide du formulaire ou contactez-nous au (514) 206-7171. Nous pourrons discuter des services et formations appropriés."
-  }
+  { q: "Combien coûte un nettoyage?", a: "Le prix dépend de la superficie, de l’état des lieux et du type de nettoyage demandé. Décrivez-nous votre espace pour obtenir une proposition adaptée." },
+  { q: "Quels types d’espaces pouvez-vous nettoyer?", a: "Ce modèle de site présente le grand ménage résidentiel, le nettoyage de déménagement et l’entretien de locations. Précisez votre adresse et le type d’espace pour confirmer la disponibilité." },
+  { q: "Dois-je fournir les produits de nettoyage?", a: "Indiquez vos préférences ou restrictions concernant les produits et le matériel. Les modalités seront confirmées avant toute intervention." },
+  { q: "Combien de temps dure le nettoyage?", a: "La durée varie selon la taille de l’espace, son état et les tâches à effectuer. Une estimation pourra être communiquée lors de la prise de contact." },
+  { q: "Peut-on prévoir un entretien régulier?", a: "Vous pouvez faire une demande pour un entretien ponctuel ou récurrent. Les fréquences et disponibilités seront précisées dans la proposition." },
+  { q: "Faites-vous le nettoyage avant ou après un déménagement?", a: "Oui, c’est l’un des services présentés sur cette page. Décrivez la superficie et l’état du logement pour obtenir une estimation." },
+  { q: "Comment demander un devis?", a: "Remplissez le formulaire en indiquant le service, le type de logement et vos besoins. Vous pouvez également nous joindre par téléphone ou par courriel." },
 ];
 
 export const expertiseCards = [
-  {
-    "name": "Prévention des risques",
-    "service": "Santé et sécurité du travail",
-    "quote": "Élaborer un programme de prévention adapté aux risques et aux activités de votre organisation."
-  },
-  {
-    "name": "Formations sur mesure",
-    "service": "Formation des travailleurs",
-    "quote": "Outiller les gestionnaires et les équipes avec des formations concrètes et adaptées au milieu."
-  },
-  {
-    "name": "Conseil RH",
-    "service": "Accompagnement des PME",
-    "quote": "Accompagner les employeurs dans la gestion des ressources humaines et des relations de travail."
-  },
-  {
-    "name": "Inspection et analyse",
-    "service": "Prévention au quotidien",
-    "quote": "Analyser les tâches, inspecter les lieux et identifier les pistes d'amélioration en SST."
-  },
-  {
-    "name": "Gestion des lésions",
-    "service": "Ressources humaines & SST",
-    "quote": "Aborder la gestion des lésions professionnelles, des absences et de l'assignation temporaire."
-  },
-  {
-    "name": "Manutention sécuritaire",
-    "service": "Chariots, nacelles et transpalettes",
-    "quote": "Renforcer les compétences avec des formations sur les équipements de manutention et la sécurité."
-  }
+  { name: "Grand ménage", service: "Nettoyage en profondeur", quote: "Un soin particulier apporté aux cuisines, salles de bain et surfaces souvent oubliées." },
+  { name: "Avant emménagement", service: "Nouvel espace", quote: "Préparer un intérieur propre et accueillant avant de déposer ses boîtes." },
+  { name: "Après déménagement", service: "Remise en état", quote: "Faire place nette avant une remise des clés ou une nouvelle occupation." },
+  { name: "Locations de courte durée", service: "Entre deux séjours", quote: "Accorder de l’attention aux détails qui rendent un espace agréable à retrouver." },
+  { name: "Espaces du quotidien", service: "Entretien personnalisé", quote: "Adapter les tâches au rythme de vie, à la superficie et aux priorités du lieu." },
+  { name: "Souci du détail", service: "Finitions soignées", quote: "Ne pas oublier les coins, rebords, plinthes et surfaces qui font la différence." },
 ];
